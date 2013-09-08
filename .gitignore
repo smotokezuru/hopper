@@ -1,4 +1,11 @@
 *.class
+/bin
+/build
+/out
+/target
+/work
+/.gradle
+*.iws
 
 # Package Files #
 *.jar
