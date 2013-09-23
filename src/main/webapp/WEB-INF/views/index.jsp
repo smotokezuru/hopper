@@ -4,17 +4,20 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>Spring MVC Starter Application</title>
-<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/normalize.css"/>" />
-<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/screen.css"/>" />
+    <meta charset="utf-8">
+    <title>Spring MVC Starter Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<c:url value="/static/resources/css/normalize.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/resources/css/bootstrap.min.css"/>" media="screen">
+    <link rel="stylesheet" href="<c:url value="/static/resources/css/screen.css"/>">
 </head>
 <body>
 	<div id="container">
 		<header>
 			<img src="<c:url value="/static/resources/gfx/dualbrand_logo.png"/>" />
 		</header>
-		<article>
+		<div class="row">
+		<article class="col-sm-8 col-xs-12">
 			<form:form commandName="newMember" id="reg">
 				<h2>Member Registration</h2>
 				<p>Enforces annotation-based constraints defined on the model
@@ -41,7 +44,7 @@
 					<em>No registered members.</em>
 				</c:when>
 				<c:otherwise>
-					<table class="simpletablestyle">
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<thead>
 							<tr>
 								<th>Id</th>
@@ -54,7 +57,7 @@
 								<tr>
 									<td>${member.id}</td>
 									<td>${member.code}</td>
-									<td><a href="<c:url value="/rest/members/${member.id}"/>">/rest/members/${member.id}</a></td>
+									<td><a href="<c:url value="/rest/items/${member.id}"/>">/rest/members/${member.id}</a></td>
 							</c:forEach>
 						</tbody>
 					</table>
@@ -68,7 +71,8 @@
 				</c:otherwise>
 			</c:choose>
 		</article>
-		<aside>
+		
+		<aside class="col-sm-4 hidden-xs">
 			<p>Learn more about JBoss Enterprise Application Platform 6.</p>
 			<ul>
 				<li><a href="http://red.ht/jbeap-6-docs">Documentation</a></li>
@@ -83,9 +87,15 @@
 						Information</a></li>
 			</ul>
 		</aside>
-		<footer>
+		</div>
+		<footer class="navbar navbar-default navbar-fixed-bottom">
 			<p>the footer.</p>
 		</footer>
 	</div>
+</body>
+<script src="<c:url value="/static/resources/js/jquery-2.0.3.min.js"/>"></script>
+<script src="<c:url value="/static/resources/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="/static/resources/js/underscore-min.js"/>"></script>
+<script src="<c:url value="/static/resources/js/backbone-min.js"/>"></script>
 </body>
 </html>
