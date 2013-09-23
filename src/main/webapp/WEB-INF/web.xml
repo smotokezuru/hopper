@@ -1,17 +1,10 @@
-<!-- 
 <web-app version="3.0"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
                              http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-         metadata-complete="true"> -->
-<web-app version="2.5"
-   xmlns="http://java.sun.com/xml/ns/javaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-                       http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-   metadata-complete="true">
- <display-name>Java EE 6 Starter Application</display-name>
+         metadata-complete="true">
+  <display-name>Servlet 3.0 Application</display-name>
 
   <context-param>
 	<param-name>contextConfigLocation</param-name>
