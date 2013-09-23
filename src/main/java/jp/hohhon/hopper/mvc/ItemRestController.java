@@ -2,8 +2,8 @@ package jp.hohhon.hopper.mvc;
 
 import java.util.List;
 
-import jp.hohhon.hopper.domain.Member;
-import jp.hohhon.hopper.repo.MemberDao;
+import jp.hohhon.hopper.domain.Item;
+import jp.hohhon.hopper.repo.ItemDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/rest/members")
-public class MemberRestController
+@RequestMapping("/rest/items")
+public class ItemRestController
 {
     @Autowired
-    private MemberDao memberDao;
+    private ItemDao itemDao;
 
     @RequestMapping(method=RequestMethod.GET, produces="application/json")
-    public @ResponseBody List<Member> listAllMembers()
+    public @ResponseBody List<Item> listAllMembers()
     {
-        return memberDao.findAllOrderedByName();
+        return itemDao.findAllOrderedByName();
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET, produces="application/json")
-    public @ResponseBody Member lookupMemberById(@PathVariable("id") Long id)
+    public @ResponseBody Item lookupMemberById(@PathVariable("id") Long id)
     {
-        return memberDao.findById(id);
+        return itemDao.findById(id);
     }
 }

@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/META-INF/spring/infrastructure.xml</config>
 		<config>src/main/resources/META-INF/context-liquibase.xml</config>
+		<config>src/main/resources/META-INF/spring/infrastructure_tomcat7.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
