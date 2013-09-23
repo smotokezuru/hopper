@@ -17,8 +17,8 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class Member implements Serializable
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "code"))
+public class Item implements Serializable
 {
    /** Default value included to remove warning. Remove or modify at will. **/
    private static final long serialVersionUID = 1L;
@@ -28,20 +28,19 @@ public class Member implements Serializable
    private Long id;
 
    @NotNull
+   @NotEmpty
    @Size(min = 1, max = 25)
    @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
-   private String name;
+   private String code;
 
-   @NotNull
-   @NotEmpty
-   @Email
-   private String email;
-
-   @NotNull
-   @Size(min = 10, max = 12)
-   @Digits(fraction = 0, integer = 12)
+//   @Email
+//   private String email;
+//
+//   @NotNull
+//   @Size(min = 10, max = 12)
+//   @Digits(fraction = 0, integer = 12)
 //   @Column(name = "phone_number")
-   private String phoneNumber;
+//   private String phoneNumber;
 
    public Long getId() {
       return id;
@@ -51,27 +50,12 @@ public class Member implements Serializable
       this.id = id;
    }
 
-   public String getName() {
-      return name;
+   public String getCode() {
+      return code;
    }
 
-   public void setName(String name) {
-      this.name = name;
+   public void setCode(String val) {
+      code = val;
    }
 
-   public String getEmail() {
-      return email;
-   }
-
-   public void setEmail(String email) {
-      this.email = email;
-   }
-
-   public String getPhoneNumber() {
-      return phoneNumber;
-   }
-
-   public void setPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
-   }
 }
