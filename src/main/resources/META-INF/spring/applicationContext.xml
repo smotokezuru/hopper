@@ -21,7 +21,6 @@
 
 	<context:component-scan base-package="jp.hohhon.hopper.domain"/>
 
-<!-- 	<context:component-scan base-package="jp.hohhon.hopper.repo"/>-->
     <jpa:repositories base-package="jp.hohhon.hopper.repo" repository-impl-postfix="Impl"/>
 
 	<tx:annotation-driven />

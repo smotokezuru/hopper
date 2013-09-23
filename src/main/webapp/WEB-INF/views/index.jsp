@@ -6,8 +6,8 @@
 <head>
 <meta charset="utf-8">
 <title>Spring MVC Starter Application</title>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value="/static/resources/css/screen.css"/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/normalize.css"/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/screen.css"/>" />
 </head>
 <body>
 	<div id="container">
