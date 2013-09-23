@@ -3,7 +3,8 @@ package jp.hohhon.hopper.mvc;
 import java.util.List;
 
 import jp.hohhon.hopper.domain.Item;
-import jp.hohhon.hopper.repo.ItemDao;
+import jp.hohhon.hopper.repo.ItemRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,17 +17,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ItemRestController
 {
     @Autowired
-    private ItemDao itemDao;
+    private ItemRepository itemRepository;
 
     @RequestMapping(method=RequestMethod.GET, produces="application/json")
     public @ResponseBody List<Item> listAllMembers()
     {
-        return itemDao.findAllOrderedByName();
+        return itemRepository.findAll();
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET, produces="application/json")
     public @ResponseBody Item lookupMemberById(@PathVariable("id") Long id)
     {
-        return itemDao.findById(id);
+        return itemRepository.findOne(id);
     }
 }
